@@ -1,0 +1,60 @@
+<div class="layout">
+  <p>
+    Molimo popunite sva polja kako biste dobili procjenu i potvrdili svoj
+    pregled.
+  </p>
+
+  <form>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Ime</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Prezime</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Broj zdravstvenog osiguranja</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Broj mobilnog telefona</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi" />
+    </mat-form-field>
+    <p>Simptomi:</p>
+    <div
+      class="row"
+      *ngFor="let selectedSymptom of selectedSymptoms; index as i"
+    >
+      <mat-form-field class="col" appearance="fill">
+        <mat-label>Cars</mat-label>
+        <select matNativeControl required>
+          <option
+            ng-Model="symptomName"
+            value="volvo"
+            *ngFor="let symptom of symptoms"
+          >
+            {{ symptom.name }}
+          </option>
+        </select>
+      </mat-form-field>
+      <mat-form-field class="col" appearance="fill">
+        <mat-label>Cars</mat-label>
+        <select matNativeControl required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <button mat-button color="primary" class="button" click="handleSubmit()">
+      Posalji
+    </button>
+  </form>
+</div>
